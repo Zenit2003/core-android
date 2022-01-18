@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Hitos Android</string>
-    <string name="texto">Hola buenas</string>
+    <string name="datos">Datos</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="numero">Numero</string>
+
 
 </resources>

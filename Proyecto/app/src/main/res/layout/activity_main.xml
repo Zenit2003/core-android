@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,28 +8,48 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/texto_datos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/texto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/purple_200"
+        android:text="@string/datos"
+        android:textColor="@color/purple_700"
+        android:layout_centerHorizontal="true"
+        android:textSize="50sp" />
+
+    <EditText
+        android:id="@+id/edit_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textSize="50sp"
-        android:id="@+id/texto_hito"/>
+        android:layout_below="@+id/texto_datos"
+        android:inputType="text"
+        android:hint="@string/nombre"/>
+
+    <EditText
+        android:id="@+id/edit_apellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:layout_below="@+id/edit_nombre"
+        android:inputType="text"
+        android:hint="@string/apellidos"/>
+
+    <EditText
+        android:id="@+id/edit_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:layout_below="@+id/edit_apellidos"
+        android:inputType="number"
+        android:hint="@string/numero"/>
 
     <Button
         android:id="@+id/boton_hito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Botón"
-        android:textSize="50sp" />
+        android:layout_below="@+id/edit_numero"
+        android:layout_centerHorizontal="true"
+        android:textSize="45sp"
+        android:text="Continuar"/>
 
-    <EditText
-        android:id="@+id/edit_hito"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Escribe"
-        android:inputType="text"/>
-</LinearLayout>
+</RelativeLayout>

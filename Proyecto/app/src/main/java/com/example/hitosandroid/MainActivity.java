@@ -13,24 +13,32 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView texto;
     private Button boton;
-    private EditText editText;
+    private EditText editTextNombre;
+    private EditText editTextApellidos;
+    private EditText editTextNumero;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        texto = findViewById(R.id.texto_hito);
+        texto = findViewById(R.id.texto_datos);
 
         boton = findViewById(R.id.boton_hito);
 
-        editText = findViewById(R.id.edit_hito);
+        editTextNombre = findViewById(R.id.edit_nombre);
+
+        editTextApellidos = findViewById(R.id.edit_apellidos);
+
+        editTextNumero = findViewById(R.id.edit_numero);
 
         boton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                texto.setText("Funciona");
                 Intent intent = new Intent (MainActivity.this, MostrarInfo.class);
-                intent.putExtra("intent text", editText.getText().toString());
+                intent.putExtra("intent nombre", editTextNombre.getText().toString());
+                intent.putExtra("intent apellidos", editTextApellidos.getText().toString());
+                intent.putExtra("intent numero", editTextNumero.getText().toString());  //No sé si el que sean números afecta
+
                 startActivity(intent);
             }
         });
