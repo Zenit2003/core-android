@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.nio.BufferUnderflowException;
+
 public class MostrarInfo extends AppCompatActivity {
 
     private TextView tvMostrarNombre;
@@ -22,17 +24,16 @@ public class MostrarInfo extends AppCompatActivity {
         tvMostrarApellidos = findViewById(R.id.tv_mostrar_apellidos);
         tvMostrarNumero = findViewById(R.id.tv_mostrar_numero);
 
-        Intent intent = getIntent();
 
-        //Envio del usuario por activities
-        usuarioMostrar = (Usuario) getIntent().getSerializableExtra("intent usuario");
-        
-        //Asignación de los campos de texto
-        tvMostrarNombre.setText(usuarioMostrar.getNombre());
-        tvMostrarApellidos.setText(usuarioMostrar.getApellidos());
-        tvMostrarNumero.setText(usuarioMostrar.getNumero());
+        Bundle objetoEnviado = getIntent().getExtras();
+        Usuario usuarioMostrar= null;
 
-
+        if(objetoEnviado != null){
+            usuarioMostrar = (Usuario) objetoEnviado.getSerializable("usuario");
+            tvMostrarNombre.setText(usuarioMostrar.getNombre().toString());
+            tvMostrarApellidos.setText(usuarioMostrar.getApellidos().toString());
+            tvMostrarNumero.setText(usuarioMostrar.getNumero().toString());
+        }
 
     }
 }

@@ -39,8 +39,11 @@ public class MainActivity extends AppCompatActivity {
                         editTextApellidos.getText().toString(),editTextNumero.getText().toString());
 
                 Intent intent = new Intent (MainActivity.this, MostrarInfo.class);
-                intent.putExtra("intent usuario", usuario);
 
+                Bundle bundle =new Bundle();
+                bundle.putSerializable("usuario", usuario);
+
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
