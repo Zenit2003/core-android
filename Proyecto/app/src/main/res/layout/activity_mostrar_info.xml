@@ -8,25 +8,32 @@
     tools:context=".MostrarInfo">
 
     <TextView
+        android:id="@+id/tv_mostrar_datos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:text="@string/datosCliente"/>
+
+    <TextView
         android:id="@+id/tv_mostrar_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="50sp"
-        android:text="Algo"/>
+        android:text="Aquí nombre"/>
 
     <TextView
         android:id="@+id/tv_mostrar_apellidos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="50sp"
-        android:text="Algo"/>
+        android:text="Aquí apellidos"/>
 
     <TextView
         android:id="@+id/tv_mostrar_numero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="50sp"
-        android:text="Algo"/>
+        android:text="Aquí número"/>
 
 
 </LinearLayout>

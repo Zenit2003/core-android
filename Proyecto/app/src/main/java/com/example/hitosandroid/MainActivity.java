@@ -34,10 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
         boton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                Usuario usuario = new Usuario(editTextNombre.getText().toString(),
+                        editTextApellidos.getText().toString(),editTextNumero.getText().toString());
+
                 Intent intent = new Intent (MainActivity.this, MostrarInfo.class);
-                intent.putExtra("intent nombre", editTextNombre.getText().toString());
-                intent.putExtra("intent apellidos", editTextApellidos.getText().toString());
-                intent.putExtra("intent numero", editTextNumero.getText().toString());  //No sé si el que sean números afecta
+                intent.putExtra("intent usuario", usuario);
 
                 startActivity(intent);
             }

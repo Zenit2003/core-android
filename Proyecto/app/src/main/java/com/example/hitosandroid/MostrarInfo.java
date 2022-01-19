@@ -11,6 +11,7 @@ public class MostrarInfo extends AppCompatActivity {
     private TextView tvMostrarNombre;
     private TextView tvMostrarApellidos;
     private TextView tvMostrarNumero;
+    private Usuario usuarioMostrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +24,15 @@ public class MostrarInfo extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        tvMostrarNombre.setText(intent.getStringExtra("intent nombre"));
-        tvMostrarApellidos.setText(intent.getStringExtra("intent apellidos"));
-        tvMostrarNumero.setText(intent.getStringExtra("intent numero"));
+        //Envio del usuario por activities
+        usuarioMostrar = (Usuario) getIntent().getSerializableExtra("intent usuario");
         
+        //Asignación de los campos de texto
+        tvMostrarNombre.setText(usuarioMostrar.getNombre());
+        tvMostrarApellidos.setText(usuarioMostrar.getApellidos());
+        tvMostrarNumero.setText(usuarioMostrar.getNumero());
+
+
 
     }
 }

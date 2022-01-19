@@ -4,6 +4,7 @@
     <string name="nombre">Nombre</string>
     <string name="apellidos">Apellidos</string>
     <string name="numero">Numero</string>
+    <string name="datosCliente">Datos del cliente</string>
 
 
 </resources>
