@@ -52,4 +52,24 @@
         android:textSize="45sp"
         android:text="Continuar"/>
 
+    <TextView
+        android:id="@+id/msj_ultimo_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boton_hito"
+        android:layout_marginTop="30sp"
+        android:textSize="40sp"
+        android:text="Texto prueba"/>
+
+    <TextView
+        android:id="@+id/tv_ultimo_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_below="@id/msj_ultimo_usuario"
+        android:layout_marginTop="10sp"
+        android:textColor="@color/gray"
+        android:text="Texto prueba"
+        />
+
 </RelativeLayout>

@@ -16,11 +16,18 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextNombre;
     private EditText editTextApellidos;
     private EditText editTextNumero;
+    private Usuario ultimoUsuario;
+    private TextView msjUltimoUsiario;
+    private TextView tvUltimoUsuario;
+    private TinyDB tinyDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tinyDB = new TinyDB(this);
+
 
         texto = findViewById(R.id.texto_datos);
 
@@ -32,6 +39,19 @@ public class MainActivity extends AppCompatActivity {
 
         editTextNumero = findViewById(R.id.edit_numero);
 
+        msjUltimoUsiario = findViewById(R.id.msj_ultimo_usuario);
+
+        tvUltimoUsuario = findViewById(R.id.tv_ultimo_usuario);
+
+        try {
+            ultimoUsuario = (Usuario) tinyDB.getObject("lastUser", Usuario.class);
+            msjUltimoUsiario.setText("Último usuario introducido:");
+            tvUltimoUsuario.setText(ultimoUsuario.toString());
+        }catch (Exception e){
+            msjUltimoUsiario.setText("No se ha introducido ningún usuario");
+            tvUltimoUsuario.setText("");
+        }
+
         boton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -42,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Bundle bundle =new Bundle();
                 bundle.putSerializable("usuario", usuario);
+
+                tinyDB.putObject("lastUser", usuario);
 
                 intent.putExtras(bundle);
                 startActivity(intent);
